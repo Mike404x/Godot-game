@@ -412,7 +412,7 @@ sources/0 = SubResource("TileSetAtlasSource_75rdt")
 
 [sub_resource type="Animation" id="Animation_o7rtu"]
 resource_name = "move"
-length = 5.0
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -421,10 +421,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-64, 20), Vector2(-160, 20)]
+"values": [Vector2(-46, 25)]
 }
 
 [sub_resource type="Animation" id="Animation_25vtg"]
