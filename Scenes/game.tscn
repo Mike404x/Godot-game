@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5v6n1h4latw5"]
+[gd_scene load_steps=30 format=3 uid="uid://b5v6n1h4latw5"]
 
 [ext_resource type="PackedScene" uid="uid://ku3lq4c58cpe" path="res://Scenes/player.tscn" id="1_4f4f3"]
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_7h2if"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://b8f43jpb7gdpw" path="res://Assets/fonts/PixelOperator8.ttf" id="8_0lqna"]
 [ext_resource type="PackedScene" uid="uid://d3fv02ib3ywrc" path="res://Scenes/platform v3.tscn" id="8_ml3nt"]
 [ext_resource type="PackedScene" uid="uid://belrxcc2rvpxj" path="res://Scenes/music.tscn" id="9_r1xxu"]
+[ext_resource type="Texture2D" uid="uid://crrr56xxh38t8" path="res://Assets/sprites/world_tileset2.png" id="12_kentq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75rdt"]
 texture = ExtResource("2_e3vyl")
@@ -492,6 +493,21 @@ _data = {
 "move": SubResource("Animation_njtmo")
 }
 
+[sub_resource type="Animation" id="Animation_7ydmv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-193, -216)]
+}
+
 [sub_resource type="Animation" id="Animation_w3y8w"]
 resource_name = "move"
 length = 3.0
@@ -509,7 +525,13 @@ tracks/0/keys = {
 "values": [Vector2(-190, -215), Vector2(-190, -119)]
 }
 
-[sub_resource type="Animation" id="Animation_7ydmv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hppb2"]
+_data = {
+"RESET": SubResource("Animation_7ydmv"),
+"move": SubResource("Animation_w3y8w")
+}
+
+[sub_resource type="Animation" id="Animation_8mb4v"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -521,13 +543,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-193, -216)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hppb2"]
-_data = {
-"RESET": SubResource("Animation_7ydmv"),
-"move": SubResource("Animation_w3y8w")
+"values": [Vector2(114, -199)]
 }
 
 [sub_resource type="Animation" id="Animation_xn7w2"]
@@ -547,26 +563,20 @@ tracks/0/keys = {
 "values": [Vector2(114, -199), Vector2(70, -199)]
 }
 
-[sub_resource type="Animation" id="Animation_8mb4v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(114, -199)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwqyq"]
 _data = {
 "RESET": SubResource("Animation_8mb4v"),
 "move sides": SubResource("Animation_xn7w2")
 }
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuh6f"]
+texture = ExtResource("12_kentq")
+4:9/animation_frame_0/duration = 1.0
+4:9/animation_frame_1/duration = 1.0
+4:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wlc2j"]
+sources/0 = SubResource("TileSetAtlasSource_uuh6f")
 
 [node name="Game" type="Node2D"]
 
@@ -710,3 +720,8 @@ theme_override_font_sizes/font_size = 8
 text = "Thanks for playing!"
 
 [node name="Music" parent="." instance=ExtResource("9_r1xxu")]
+
+[node name="water" type="TileMap" parent="."]
+position = Vector2(20, 4)
+tile_set = SubResource("TileSet_wlc2j")
+format = 2
