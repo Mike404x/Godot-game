@@ -671,6 +671,8 @@ theme_override_font_sizes/font_size = 8
 text = "He-he now go back"
 horizontal_alignment = 1
 
+[node name="Music" parent="GameManager" instance=ExtResource("9_r1xxu")]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(20, 4)
 tile_set = SubResource("TileSet_qyb2r")
@@ -823,16 +825,6 @@ position = Vector2(882, 61)
 
 [node name="Coin21" parent="Coins" instance=ExtResource("4_63uxv")]
 position = Vector2(1084, 60)
-
-[node name="Music" parent="." instance=ExtResource("9_r1xxu")]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 524.0
-offset_top = 84.0
-offset_right = 564.0
-offset_bottom = 124.0
 
 [node name="Enemy" type="Node" parent="."]
 

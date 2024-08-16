@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://qhpgeiiy0itl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xel02"]
+bg_color = Color(0, 0.474541, 0.92115, 1)
+border_width_bottom = 13
+border_color = Color(4.42803e-06, 0.236569, 0.630887, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_top = 4.0
+shadow_color = Color(0.122252, 0.122252, 0.122252, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(5, 3)
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_xel02")
