@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b5v6n1h4latw5"]
+[gd_scene load_steps=33 format=3 uid="uid://b5v6n1h4latw5"]
 
 [ext_resource type="PackedScene" uid="uid://ku3lq4c58cpe" path="res://Scenes/player.tscn" id="1_4f4f3"]
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_7h2if"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://boyy7f00e3o25" path="res://Scenes/platform v2.tscn" id="7_n5new"]
 [ext_resource type="FontFile" uid="uid://b8f43jpb7gdpw" path="res://Assets/fonts/PixelOperator8.ttf" id="8_0lqna"]
 [ext_resource type="PackedScene" uid="uid://d3fv02ib3ywrc" path="res://Scenes/platform v3.tscn" id="8_ml3nt"]
-[ext_resource type="PackedScene" uid="uid://belrxcc2rvpxj" path="res://Scenes/music.tscn" id="9_r1xxu"]
 [ext_resource type="Texture2D" uid="uid://crrr56xxh38t8" path="res://Assets/sprites/world_tileset2.png" id="12_kentq"]
 [ext_resource type="PackedScene" uid="uid://df2akonj605wx" path="res://Scenes/platform v4.tscn" id="13_vepu2"]
 [ext_resource type="PackedScene" uid="uid://cx4sockw2tpht" path="res://Scenes/platform v4 small.tscn" id="14_mmn24"]
@@ -670,8 +669,6 @@ theme_override_fonts/font = ExtResource("8_0lqna")
 theme_override_font_sizes/font_size = 8
 text = "He-he now go back"
 horizontal_alignment = 1
-
-[node name="Music" parent="GameManager" instance=ExtResource("9_r1xxu")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(20, 4)
