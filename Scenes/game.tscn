@@ -647,6 +647,30 @@ theme_override_fonts/font = ExtResource("8_0lqna")
 theme_override_font_sizes/font_size = 8
 text = " X coins."
 
+[node name="Label" type="Label" parent="GameManager"]
+offset_left = 917.0
+offset_top = -231.0
+offset_right = 1060.0
+offset_bottom = -190.0
+theme_override_fonts/font = ExtResource("8_0lqna")
+theme_override_font_sizes/font_size = 8
+text = "Thanks for playing!"
+
+[node name="Label2" type="Label" parent="GameManager"]
+anchors_preset = -1
+anchor_left = 0.662
+anchor_top = 6.45
+anchor_right = 1.127
+anchor_bottom = 6.942
+offset_left = 329.376
+offset_top = -4150.6
+offset_right = -48.304
+offset_bottom = -4355.42
+theme_override_fonts/font = ExtResource("8_0lqna")
+theme_override_font_sizes/font_size = 8
+text = "He-he now go back"
+horizontal_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(20, 4)
 tile_set = SubResource("TileSet_qyb2r")
@@ -732,8 +756,8 @@ position = Vector2(605, 16)
 [node name="Platform v4 small3" parent="Platforms" instance=ExtResource("14_mmn24")]
 position = Vector2(520, 2)
 
-[node name="Slime LV1" parent="." instance=ExtResource("6_mmsro")]
-position = Vector2(796, -124)
+[node name="Platform v4" parent="Platforms" instance=ExtResource("13_vepu2")]
+position = Vector2(1108, 72)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -800,37 +824,23 @@ position = Vector2(882, 61)
 [node name="Coin21" parent="Coins" instance=ExtResource("4_63uxv")]
 position = Vector2(1084, 60)
 
-[node name="Slime LV1_2" parent="." instance=ExtResource("6_mmsro")]
-position = Vector2(-340, 36)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 917.0
-offset_top = -231.0
-offset_right = 1060.0
-offset_bottom = -190.0
-theme_override_fonts/font = ExtResource("8_0lqna")
-theme_override_font_sizes/font_size = 8
-text = "Thanks for playing!"
-
 [node name="Music" parent="." instance=ExtResource("9_r1xxu")]
 
-[node name="Label2" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.662
-anchor_top = 6.45
-anchor_right = 1.127
-anchor_bottom = 6.942
-offset_left = 1113.0
-offset_top = 12.0
-offset_right = 1229.0
-offset_bottom = 27.0
-theme_override_fonts/font = ExtResource("8_0lqna")
-theme_override_font_sizes/font_size = 8
-text = "He-he now go back"
-horizontal_alignment = 1
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 524.0
+offset_top = 84.0
+offset_right = 564.0
+offset_bottom = 124.0
 
-[node name="Platform v4" parent="." instance=ExtResource("13_vepu2")]
-position = Vector2(1108, 72)
+[node name="Enemy" type="Node" parent="."]
 
-[node name="Slime LV2" parent="." instance=ExtResource("6_mmsro")]
+[node name="Slime LV2" parent="Enemy" instance=ExtResource("6_mmsro")]
 position = Vector2(524, 84)
+
+[node name="Slime LV1_2" parent="Enemy" instance=ExtResource("6_mmsro")]
+position = Vector2(-340, 36)
+
+[node name="Slime LV1" parent="Enemy" instance=ExtResource("6_mmsro")]
+position = Vector2(796, -124)
